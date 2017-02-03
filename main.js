@@ -245,12 +245,12 @@ ipc.on('save-and-open-dss', function (event, arg) {
     var url = arg.url;
     prefstore.set("dssURL", url);
 
+    createMainWindow(url);
+
     if (prefsWindow != null) {
         prefsWindow.close();
         prefsWindow = null;
     }
-
-    createMainWindow(url);
 })
 
 app.on('ready', function () {

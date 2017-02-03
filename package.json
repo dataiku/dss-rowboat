@@ -1,7 +1,7 @@
 {
   "name": "DSSRowBoat",
   "productName": "DSS RowBoat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "DSS Navigator",
   "private": true,
   "main": "main.js",

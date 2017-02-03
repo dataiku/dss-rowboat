@@ -1,0 +1,64 @@
+body {
+	font-family: Helvetica, Arial;
+	margin: 0;
+	color: #333;
+}
+
+.header {
+	height: 60px;
+	text-align: center;
+	background: #2AB1AC;
+}
+
+.header h1 {
+	margin: 0;
+	font-weight: lighter;
+	line-height: 60px;
+	font-size: 30px;
+	color: white;
+}
+
+main {
+	background: white;
+	text-align: center;
+}
+
+main h2 {
+	padding-top: 45px;
+	font-weight: 300;
+	font-size:18px;
+}
+
+input[type=text] {
+	width: 180px;
+	font-size: 14px;
+	border-radius: 0;
+	border: 1px #d0d0d2 solid;
+	padding: 4px;
+	display: block;
+	margin: 0 auto 25px auto;
+}
+
+button {
+	border-radius: 4px;
+	background-color: #2AB1AC;
+	border: none;
+	color: white;
+	padding: 8px 25px;
+	font-size: 300;
+	font-size: 17px;
+}
+
+button:hover {
+	background-color: #218985;
+}
+button:active {
+	background-color: #208378;
+}
+
+#error-field {
+	margin-top: 10px;
+	padding: 10px;
+	color: #a94442;
+	font-size: 12px;
+}

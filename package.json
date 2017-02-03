@@ -1,0 +1,69 @@
+{
+  "name": "DSSRowBoat",
+  "productName": "DSS Row Boat",
+  "version": "0.0.1",
+  "description": "DSS Navigator",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "lint": "standard | snazzy",
+    "test": "mocha tests && npm run lint",
+    "sign-exe": "signcode ./out/DSSRowBoat-win32-ia32/DSSRowBoat.exe --cert ~/dss-rowboat.p12 --prompt --name 'DSS RowBoat' --url 'https://www.dataiku.com'",
+    "sign-installer": "signcode ./out/windows-installer/DSSRowBoatSetup.exe --cert ~/dss-rowboat.p12 --prompt --name 'DSS RowBoat' --url 'https://www.dataiku.com'",
+    "pack-mac": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --out=out --osx-sign.identity='Developer ID Application: Dataiku' --extend-info=assets/mac/info.plist",
+    "pack-win": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --out=out --version-string.CompanyName='Dataiku SAS' --version-string.FileDescription='DSS RowBoat' --version-string.ProductName='DSS RowBoat'",
+    "pack-linux": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=linux --arch=x64 --out=out",
+    "package": "npm run pack-mac && npm run pack-win && npm run pack-linux",
+    "installer": "node ./script/installer.js",
+    "windows-store": "node ./script/windows-store.js",
+    "mas": "./script/mas.sh",
+    "prepare-release": "npm run package && npm run sign-exe && npm run installer && npm run sign-installer",
+    "release": "node ./script/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataiku/dss-rowboat.git"
+  },
+  "keywords": [
+    "Electron",
+    "API",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dataiku/dss-rowboat/issues"
+  },
+  "homepage": "https://github.com/dataiku/dss-rowboat#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^6.0.0",
+    "devtron": "^1.3.0",
+    "electron": "^1.3.5",
+    "electron-packager": "^8.0.0",
+    "electron-winstaller": "^2.2.0",
+    "mocha": "^3.1.0",
+    "request": "^2.70.0",
+    "rimraf": "^2.5.2",
+    "signcode": "^0.5.0",
+    "snazzy": "^5.0.0",
+    "spectron": "~3.4.0",
+    "standard": "^8.2.0"
+  },
+  "build": {
+    "appId" :"dss-rowboat"
+  },
+  "dependencies": {
+    "electron-json-storage": "^2.0.0",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^7.1.0",
+    "highlight.js": "^9.3.0"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
+  }
+}

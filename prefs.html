@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/rowboat.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <h1>DSS Row Boat</h1>
+        </div>
+
+        <main>
+            <h2>Please enter the URL of <br />your DSS instance</h2>
+
+            <input type="text" id="url-field" placeholder="http://..." />
+
+            <button id="submit-btn">Open DSS</button>
+
+            <div id="error-field" />
+        </main>
+
+        <script>
+            require('./renderer-process/prefs')
+        </script>
+    </body>
+
+</html>
